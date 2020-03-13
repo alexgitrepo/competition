@@ -1,26 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {addUser, changeCurrentPage} from "./redux/app-reducer";
+import {connect} from "react-redux";
+import Registration from "./components/Registration/Registration";
+import UsersTable from "./components/UsersTable/UsersTable";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+        <div className="App">
+            <RegistrationContainer/>
+            <UsersTableContainer/>
+        </div>
+    );
 }
+let mapStateToPropsUsersTable = (state) => {
+    return {
+        users: state.app.users,
+        totalItems: state.app.currentUserId,
+        CurrentPage: state.app.CurrentPage,
+        portionSize: state.app.portionSize,
+        pageSize: state.app.pageSize
+    }
+}
+let mapDispatchToPropsUsersTable = (dispatch) => {
+    return {
+        changeCurrentPage: (page) => {
+            dispatch(changeCurrentPage(page))
+        }
+    }
+}
+
+let mapDispatchToPropsRegistration = (dispatch) => {
+    return {
+        addUser: (date, name, email, phone, distance, payment) => {
+            dispatch(addUser(date, name, email, phone, distance, payment))
+        }
+    }
+}
+let RegistrationContainer = connect(null, mapDispatchToPropsRegistration)(Registration)
+let UsersTableContainer = connect(mapStateToPropsUsersTable, mapDispatchToPropsUsersTable)(UsersTable)
+
 
 export default App;
