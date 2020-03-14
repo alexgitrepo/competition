@@ -1,2 +1,30 @@
-.paginator{}
-.active{font-weight: bold}
+.paginator {
+    margin-top: 10px
+}
+
+.paginator button {
+    text-align: center;
+
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.9;
+    margin: 0.3rem;
+    border: solid 1px #a7c9e6;
+    background: #f4f6fa;
+    transition: all 0.4s
+}
+
+.paginator button:hover {
+
+    background: #a7c9e6;
+    cursor: pointer;
+}
+
+.paginator button.active {
+    font-weight: bold;
+    color: #fff;
+    background-color: #4f93ce;
+}

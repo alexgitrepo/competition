@@ -15,7 +15,7 @@ const Registration = ({addUser}) => {
     }
     return <div className={style.registrationWrapper}>
         <div className={style.registration}>
-            <h3>Registration Form</h3>
+            <h2>Заявка на участие в благотворительном забеге</h2>
             <RegistrationFormRedux onSubmit={onSubmit}/>
         </div>
     </div>
