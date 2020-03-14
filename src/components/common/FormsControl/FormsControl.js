@@ -2,17 +2,14 @@ import React from 'react'
 import style from './FormsControl.module.css'
 import {Field} from "redux-form";
 import {required} from "../../../validators/validators";
+import attention from '../../../assets/warning-speech-bubble.svg'
 
 export const Input = ({input, meta: {touched, error}, ...props}) => {
     const hasError = touched && error
     return (
         <div className={style.formControl + " " + (hasError ? style.error : '')}>
-            <div>
-                <input {...input} {...props}  />
-            </div>
-            <div>
-                {hasError && <span>{error}</span>}
-            </div>
+            <input {...input} {...props}  />
+            {hasError && <img className={style.attention} alt='attention' src={attention}/>}
         </div>
     )
 }

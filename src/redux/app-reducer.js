@@ -51,15 +51,42 @@ let initialState = {
         },
         {
             id: 6,
+            date: "14.01.1886",
+            name: "Ольга Сергеевна Заводская",
+            email: "olga.zavodckaia@mail.ru",
+            phone: "+79008011000",
+            distance: 5,
+            payment: 151232132100
+        },
+        {
+            id: 7,
+            date: "11.03.1987",
+            name: "Куклина Мария Ивановна",
+            email: "kyklina@mail.ru",
+            phone: "+79223625999",
+            distance: 10,
+            payment: 501232130
+        },
+        {
+            id: 8,
+            date: "8.05.1997",
+            name: "Мокрушина Галина Юрьевна",
+            email: "mokrushina@mail.ru",
+            phone: "+79881125999",
+            distance: 10,
+            payment: 3123123
+        },
+        {
+            id: 9,
             date: "24.01.1886",
             name: "Ольга Сергеевна Заводская",
             email: "olga.zavodckaia@mail.ru",
             phone: "+79008011000",
             distance: 3,
-            payment: 1500
-        }
+            payment: 2500000
+        },
     ],
-    currentUserId: 6,
+    currentUserId: 9,
     CurrentPage: 1,
     pageSize: 5,
     portionSize: 3
@@ -86,7 +113,7 @@ let appReducer = (state = initialState, action) => {
         }
         case CHANGE_CURRENT_PAGE: {
             return {
-                ...state,CurrentPage:action.page
+                ...state, CurrentPage: action.page
             }
         }
         default:

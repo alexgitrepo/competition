@@ -8,8 +8,8 @@ const UsersTable = ({users, totalItems, CurrentPage, portionSize, pageSize, chan
     let sortArray = []
     let sortTable = (currentSortField, sortDirection) => {
         if (sortDirection === "toMin") {
-            sortArray = users.sort((function (a, b) {
-                debugger
+            sortArray = [...users].sort((function (a, b) {
+                console.log(users)
                 if (a[currentSortField] < b[currentSortField]) {
                     return 1;
                 }
@@ -20,7 +20,7 @@ const UsersTable = ({users, totalItems, CurrentPage, portionSize, pageSize, chan
             }))
         }
         if (sortDirection === "toMax") {
-            sortArray = users.sort((function (a, b) {
+            sortArray = [...users].sort((function (a, b) {
                 if (a[currentSortField] > b[currentSortField]) {
                     return 1;
                 }
@@ -32,7 +32,8 @@ const UsersTable = ({users, totalItems, CurrentPage, portionSize, pageSize, chan
         }
     }
     sortTable(currentSortField, sortDirection)
-    const usersArray = sortArray.filter(item => (item.id <= (CurrentPage * pageSize) && item.id > ((CurrentPage - 1) * pageSize))).map((u) =>
+    console.log(sortArray)
+    const usersArray = sortArray.filter((item, i) => (i + 1 <= (CurrentPage * pageSize) && i + 1 > ((CurrentPage - 1) * pageSize))).map((u, i, arr) =>
         <User regNumber={u.id}
               name={u.name}
               date={u.date}
@@ -72,8 +73,8 @@ const UsersTable = ({users, totalItems, CurrentPage, portionSize, pageSize, chan
             </button>
 
             {usersArray}
-            <Paginator currentPage={CurrentPage} pageSize={pageSize} portionSize={portionSize}
-                       totalItemsCount={totalItems} onPageChange={changeCurrentPage}/>
+            {totalItems > 5 ? <Paginator currentPage={CurrentPage} pageSize={pageSize} portionSize={portionSize}
+                                         totalItemsCount={totalItems} onPageChange={changeCurrentPage}/> : ""}
         </div>
     )
 }

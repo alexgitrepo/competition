@@ -3,7 +3,7 @@ import {Field, reduxForm, reset} from "redux-form";
 import {createField, Input} from "../common/FormsControl/FormsControl";
 import {email, required} from "../../validators/validators";
 import {createTextMask} from 'redux-form-input-masks'
-import style from '../common/FormsControl/FormsControl.module.css'
+import style from './Registration.module.css'
 
 const phoneMask = createTextMask({
     pattern: '+7(999) 999-9999',
@@ -25,14 +25,17 @@ const registrationForm = (props) => {
         <form onSubmit={props.handleSubmit} className={style.registrationForm}>
             {createField([required], Input, "name", "input", "ФИО")}
             {createField([required], Input, "date", "date",)}
-            {createField([required, email], Input, "email", "input", "email",)}
+            {createField([required, email], Input, "email", "input", "Email",)}
             {createField([required], Input, "phone", "tel", "phone", {...phoneMask})}
-            <Field name="distance" component="select" validate={[required]}>
-                <option></option>
-                <option value="3">3</option>
-                <option value="5">5</option>
-                <option value="10">10</option>
-            </Field>
+            <div className={style.selectWrapper}>
+                <label>Длинна дистанции, км</label>
+                <Field name="distance" component="select" validate={[required]}>
+                    <option></option>
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                </Field>
+            </div>
             {createField([required], Input, "payment", "number", "Сумма взноса")}
             <button disabled={props.pristine || props.submitting || props.invalid}>Отправить заявку</button>
             {props.error && <div className={style.summaryError}>
