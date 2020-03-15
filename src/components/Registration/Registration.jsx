@@ -24,7 +24,7 @@ const registrationForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit} className={style.registrationForm}>
             {createField([required], Input, "name", "input", "ФИО")}
-            {createField([required], Input, "date", "date",)}
+            {createField([required], Input, "date", "date","Дата рождения")}
             {createField([required, email], Input, "email", "input", "Email",)}
             {createField([required], Input, "phone", "tel", "phone", {...phoneMask})}
             <div className={style.selectWrapper}>

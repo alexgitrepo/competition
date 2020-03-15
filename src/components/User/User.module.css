@@ -8,26 +8,40 @@
 }
 
 
-span {text-align: left;
+span {
+    text-align: left;
 }
+
 .regNumber {
     width: 40px;
 }
+
 .name {
     width: 300px;
 }
+
 .date {
     width: 100px;
 }
+
 .email {
     width: 250px;
 }
+
 .phone {
     width: 120px;
 }
+
 .distance {
     width: 100px;
 }
+
 .payment {
     width: 100px;
+}
+
+@media only screen and (max-width: 1280px) {
+    .userWrapper {
+        padding: 8px;
+    }
 }

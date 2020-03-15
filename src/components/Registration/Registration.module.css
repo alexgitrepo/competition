@@ -26,11 +26,10 @@
     color: black;
 }
 
-.registration input::placeholder {
-    color: grey;
+.registration h2 {
+    margin-top: 30px;
+    margin-bottom: 20px
 }
-.registration h2 {margin-top: 30px;
-margin-bottom: 20px}
 
 .registration button {
     position: relative;
@@ -57,10 +56,40 @@ margin-bottom: 20px}
     display: flex;
     justify-content: space-between;
     width: 250px;
-    padding:7px;
+    padding: 7px;
+    padding-bottom: 2px;
     border: none;
     border-bottom: 1px solid #4f93ce;
     font-size: 14px;
     color: black;
+
+}
+
+@media only screen and (max-width: 1280px) {
+    .registrationForm {
+        max-width: 700px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .registrationForm input {
+        margin-right: 50px;
+    }
+
+    .selectWrapper {
+        margin-right: 50px;
+    }
+
+    .registration h2 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 20px
+    }
+
 
 }

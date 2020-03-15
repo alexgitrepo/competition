@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import User from "../User/User";
 import Paginator from "../common/Paginator/Paginator";
 import style from './UsersTable.module.css'
+import arrowUp from '../../assets/up-arrow.svg'
+import arrowDown from '../../assets/down-arrow.svg'
+
 
 const UsersTable = ({users, totalItems, CurrentPage, portionSize, pageSize, changeCurrentPage}) => {
     const [currentSortField, changeCurrentSortField] = useState("id")
@@ -46,7 +49,7 @@ const UsersTable = ({users, totalItems, CurrentPage, portionSize, pageSize, chan
             <h2>Список участников</h2>
             <div className={style.sortButtonsWrapper}>
                 <span>Сортировать по:</span>
-                <button onClick={() => {
+                <button className={currentSortField === "id" ? style.active : ""} onClick={() => {
                     changeCurrentSortField("id")
                     if (sortDirection === "toMax") {
                         changeSortDirection("toMin")
@@ -54,8 +57,10 @@ const UsersTable = ({users, totalItems, CurrentPage, portionSize, pageSize, chan
                         changeSortDirection("toMax")
                     }
                 }}>Дата регистрации
+                    {(currentSortField === "id" && sortDirection === "toMax") ? <img src={arrowUp}/> : ''}
+                    {(currentSortField === "id" && sortDirection === "toMin") ? <img src={arrowDown}/> : ''}
                 </button>
-                <button onClick={() => {
+                <button className={currentSortField === "distance" ? style.active : ""} onClick={() => {
                     changeCurrentSortField("distance")
                     if (sortDirection === "toMax") {
                         changeSortDirection("toMin")
@@ -63,15 +68,19 @@ const UsersTable = ({users, totalItems, CurrentPage, portionSize, pageSize, chan
                         changeSortDirection("toMax")
                     }
                 }}>Дистанция
+                    {(currentSortField === "distance" && sortDirection === "toMax") ? <img src={arrowUp}/> : ''}
+                    {(currentSortField === "distance" && sortDirection === "toMin") ? <img src={arrowDown}/> : ''}
                 </button>
-                <button onClick={() => {
+                <button className={currentSortField === "payment" ? style.active : ""} onClick={() => {
                     changeCurrentSortField("payment")
                     if (sortDirection === "toMax") {
                         changeSortDirection("toMin")
                     } else if (sortDirection === "toMin") {
                         changeSortDirection("toMax")
                     }
-                }}>взнос
+                }}>Взнос
+                    {(currentSortField === "payment" && sortDirection === "toMax") ? <img src={arrowUp}/> : ''}
+                    {(currentSortField === "payment" && sortDirection === "toMin") ? <img src={arrowDown}/> : ''}
                 </button>
             </div>
             <div className={style.titleWrapper}>
