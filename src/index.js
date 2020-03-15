@@ -1,3 +1,6 @@
+import 'react-app-polyfill/ie9';
+import 'react-app-polyfill/stable';
+import 'date-input-polyfill-react'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';

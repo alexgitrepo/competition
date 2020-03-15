@@ -15,7 +15,6 @@
 .registrationForm button:disabled {
     opacity: 0.5;
 }
-
 .registration input {
     width: 250px;
     border: none;
@@ -25,7 +24,9 @@
     font-size: 14px;
     color: black;
 }
-
+.registration input[type='date'] {
+   height: 31px;
+}
 .registration h2 {
     margin-top: 30px;
     margin-bottom: 20px
@@ -55,13 +56,14 @@
 .selectWrapper {
     display: flex;
     justify-content: space-between;
-    width: 250px;
+    width: 252px;
     padding: 7px;
     padding-bottom: 2px;
     border: none;
     border-bottom: 1px solid #4f93ce;
     font-size: 14px;
     color: black;
+    margin-left: 2px;
 
 }
 
@@ -78,11 +80,11 @@
     }
 
     .registrationForm input {
-        margin-right: 50px;
+        margin:0 30px;
     }
 
     .selectWrapper {
-        margin-right: 50px;
+        margin:0 30px;
     }
 
     .registration h2 {

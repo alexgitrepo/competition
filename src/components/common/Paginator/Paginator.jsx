@@ -15,7 +15,7 @@ const Paginator = ({totalItemsCount, currentPage, pageSize, onPageChange, portio
     return <div className={style.paginator}>
         {portionNumber > 1 && <button onClick={() => {
             setPortionNumber(portionNumber - 1)
-        }}>PREV</button>}
+        }}>{"<"}</button>}
         {pages.filter(item => item <= rightPortionBorder && item >= leftPortionBorder).map(item => <button
             className={(item === currentPage) ? style.active : ""}
             onClick={() => {
@@ -23,7 +23,7 @@ const Paginator = ({totalItemsCount, currentPage, pageSize, onPageChange, portio
             }}>{item}</button>)}
         {portionsCount > portionNumber && <button onClick={() => {
             setPortionNumber(portionNumber + 1)
-        }}>Next</button>}
+        }}>{">"}</button>}
     </div>
 }
 
