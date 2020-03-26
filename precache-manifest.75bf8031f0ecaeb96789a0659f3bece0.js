@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b9a237c5b6f5e36a340ea12523d4440c",
+    "revision": "12bef0438656ce77dae07c56c73848da",
     "url": "/competition/index.html"
   },
   {
-    "revision": "8c3ed4cc9225ba654cc9",
-    "url": "/competition/static/css/main.70fed202.chunk.css"
+    "revision": "3163b0915aa2a2c256a3",
+    "url": "/competition/static/css/main.5b8b4065.chunk.css"
   },
   {
-    "revision": "b64fc6c66a98bbca8afb",
-    "url": "/competition/static/js/2.b46f7bf3.chunk.js"
+    "revision": "530831b43ac5bf8f05ad",
+    "url": "/competition/static/js/2.2a094ae5.chunk.js"
   },
   {
     "revision": "f231859d6585c4cd5f80c344783ed269",
-    "url": "/competition/static/js/2.b46f7bf3.chunk.js.LICENSE.txt"
+    "url": "/competition/static/js/2.2a094ae5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8c3ed4cc9225ba654cc9",
-    "url": "/competition/static/js/main.76ab0eb1.chunk.js"
+    "revision": "3163b0915aa2a2c256a3",
+    "url": "/competition/static/js/main.7c6424d6.chunk.js"
   },
   {
     "revision": "e5420910ee1565c3c701",
